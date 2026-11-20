@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manglekar Mattress Factory | Natural Cotton Mattresses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #2d5a43;
+      --primary-dark: #1f4130;
+      --accent: #c88a4b;
+      --accent-light: #f5ebe0;
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #1f2421;
+      --muted: #5c6660;
+      --border: #e6e0d6;
+      --whatsapp: #25d366;
+      --whatsapp-dark: #1da851;
+      --instagram: #e1306c;
+      --shadow: 0 10px 30px rgba(31, 36, 33, 0.07);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    } 
+
+
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .brand-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.4px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #ffffff;
+    }
+
+    .btn-wa:hover {
+      background: var(--whatsapp-dark);
+    }
+
+    .btn-ig {
+      background: linear-gradient(45deg, #f09433, #dc2743, #cc2366, #bc1888);
+      color: #ffffff;
+      padding: 9px 12px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 68px 0 56px;
+      background: radial-gradient(circle at top right, #efe4d6 0%, transparent 55%),
+                  linear-gradient(180deg, #faf8f5 0%, #f3eee6 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: #8c5823;
+      border: 1px solid #e7cfa9;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.4vw, 3.35rem);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--whatsapp-dark);
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .hero-card p {
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .highlight-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      font-size: 0.93rem;
+    }
+
+    .highlight-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+    }
+
+    .highlight-list i {
+      color: var(--primary);
+    }
+
+    /* Sections */
+    section {
+      padding: 68px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* Products & Types */
+    .bg-alt {
+      background: #f4f0e8;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .catalog-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .catalog-box h3 {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+    }
+
+    .item-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.96rem;
+    }
+
+    .item-list i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .benefit-card {
+      background: var(--surface);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-card p {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* Contact & Branch Section */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .address-block {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 18px 0 24px;
+    }
+
+    .address-block i {
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-top: 3px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .social-pill.wa {
+      background: var(--whatsapp);
+    }
+
+    .social-pill.wa:hover {
+      background: var(--whatsapp-dark);
+    }
+
+    .social-pill.ig {
+      background: linear-gradient(45deg, #f09433, #dc2743, #cc2366, #bc1888);
+    }
+
+    .info-panel {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .info-panel h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .info-panel p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #e8efe9;
+      padding: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-icons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.25rem;
+    }
+
+    .footer-icons a:hover {
+      color: #f3c48f;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div id="logo">
+        
+       
+    
+    </div>
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        
+        <span class="brand-name">Manglekar Mattress Factory</span>
+        <span class="brand-tag">Branch One • Kolhapur</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#products">Mattresses & Pillows</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a
+          href="https://wa.me/917219749413?text=Hello%20Manglekar%20Mattress%20Factory%2C%20I%20would%20like%20to%20enquire%20about%20natural%20cotton%20mattresses."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="icon-btn btn-wa"
+          aria-label="WhatsApp 7219749413"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>7219749413</span>
+        </a>
+        <a
+          href="https://www.instagram.com/manglekar_mattress?lqvp=MW01am5yNXNsMzNvcA%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="icon-btn btn-ig"
+          aria-label="Manglekar Mattress on Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Traditional Indian Craftsmanship</span>
+          <h1>Natural Cotton <span>Mattresses</span></h1>
+          <p class="hero-lead">Comfortable touch of natural cotton, fine craftsmanship and quality production!</p>
+          <p>
+            Cotton mattress is a popular type of traditional Indian mattress. The cotton filling gives the mattress a soft and comfortable touch. A properly made mattress is suitable for daily use.
+          </p>
+          <div class="hero-cta">
+            <a
+              href="https://wa.me/917219749413?text=Hello%20Manglekar%20Mattress%20Factory%2C%20please%20share%20details%20on%20cotton%20mattresses."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Order on WhatsApp</span>
+            </a>
+            <a href="#products" class="btn-primary">
+              <span>Explore Types</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Manglekar Mattress Factory</h3>
+          <p><strong>Branch One:</strong> Unchagaon East, Hotel Sandeep Near, Gadmudshingi Phata, Taluka Karveer, District Kolhapur 416119</p>
+          <ul class="highlight-list">
+            <li><i class="fa-solid fa-check-circle"></i> Custom sizes & thicknesses available</li>
+            <li><i class="fa-solid fa-check-circle"></i> Printed & plain fabric options</li>
+            <li><i class="fa-solid fa-check-circle"></i> Durable daily-use Indian cotton mattresses</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Why Choose Us</div>
+          <h2>Features of our cotton mattresses</h2>
+          <p>Crafted with care for everyday comfort, durability, and personalized home living.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-feather"></i></div>
+            <h3>Cotton filling alternative</h3>
+            <p>Natural cotton filling designed for dependable comfort and everyday support.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-cloud"></i></div>
+            <h3>Soft and comfortable appearance</h3>
+            <p>Plush, inviting finish that brings warmth and ease to every bedroom.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+            <h3>Attractive printed and plain fabric options</h3>
+            <p>Choose from clean plain shades or attractive prints to match your room decor.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-threads"></i></div>
+            <h3>Strong stitching and good finish</h3>
+            <p>Neat seams and sturdy finishing built to hold shape through regular use.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+            <h3>Available in various sizes and thicknesses</h3>
+            <p>Options tailored to different cots, beds, and comfort preferences.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Design according to customer preferences</h3>
+            <p>Made to suit your preferred style, fabric choice, and sizing needs.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-house"></i></div>
+            <h3>Suitable for home use</h3>
+            <p>Practical, comfortable, and reliable for everyday household sleeping needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Types & Catalog Section -->
+    <section id="products" class="bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Our Range</div>
+          <h2>Available Types, Mattresses & Pillows</h2>
+          <p>Browse our core mattress varieties, cotton mattress styles, and pillows & cushions.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <div class="catalog-box">
+            <h3>Available Types</h3>
+            <ul class="item-list">
+              <li><i class="fa-solid fa-circle-dot"></i> Simple Cotton Mattress</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Cotton Box Mattress</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Hand Tufted Cotton Mattress</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Single cotton mattress</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Double cotton mattress</li>
+            </ul>
+          </div>
+
+          <div class="catalog-box">
+            <h3>Cotton Mattresses</h3>
+            <ul class="item-list">
+              <li><i class="fa-solid fa-circle-dot"></i> Plain cotton mattresses</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Box mattresses</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Tank mattresses</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Single and double mattresses</li>
+            </ul>
+          </div>
+
+          <div class="catalog-box">
+            <h3>Pillows & Cushions</h3>
+            <ul class="item-list">
+              <li><i class="fa-solid fa-circle-dot"></i> Cotton pillows</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Fiber pillows</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Pillow cover</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Cushions and load pillows</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Everyday Value</div>
+          <h2>Benefits of cotton mattresses</h2>
+          <p>Why families continue to prefer traditional cotton mattresses for comfortable rest.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <p>Useful for restful sleep</p>
+          </div>
+          <div class="benefit-card">
+            <p>Soft and traditional feel</p>
+          </div>
+          <div class="benefit-card">
+            <p>Facility to choose fabric as per your choice</p>
+          </div>
+          <div class="benefit-card">
+            <p>The size of the mattress can be customized as per the requirement.</p>
+          </div>
+          <div class="benefit-card">
+            <p>Can be used for a long time if properly maintained</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="bg-alt">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <div class="section-kicker">Visit & Connect</div>
+            <h2>Manglekar Mattress Factory</h2>
+
+            <div class="address-block">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Branch One</strong><br />
+                Unchagaon East, Hotel Sandeep Near, Gadmudshingi Phata, Taluka Karveer, District Kolhapur 416119
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://wa.me/917219749413?text=Hello%20Manglekar%20Mattress%20Factory%2C%20I%20want%20to%20know%20more%20about%20your%20mattresses."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-pill wa"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp: 7219749413</span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/manglekar_mattress?lqvp=MW01am5yNXNsMzNvcA%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-pill ig"
+              >
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram (@manglekar_mattress)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="info-panel">
+            <h3>Custom Orders & Enquiries</h3>
+            <p>Looking for a single, double, box, tank, or hand tufted cotton mattress or custom size?</p>
+            <p>Message us directly on WhatsApp at <strong>7219749413</strong> or check out our latest designs on Instagram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>Manglekar Mattress Factory</strong> — Unchagaon East, Gadmudshingi Phata, Tal. Karveer, Dist. Kolhapur 416119
+      </div>
+      <div class="footer-icons">
+        <a
+          href="https://wa.me/917219749413"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp 7219749413"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/manglekar_mattress?lqvp=MW01am5yNXNsMzNvcA%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
